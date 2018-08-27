@@ -4,15 +4,6 @@ do_performance = True
 do_functional = True
 
 
-def mean_x10(arr):
-    return sum(arr) / len(arr) * 10
-
-
-# modules = ["N_Neigbourhood", "FArekkusu", "Blind4Basics",  "sgerodes", "sgerodes2", "sgerodes3"]
-# modules = ["sgerodes", "sgerodes2", "sgerodes3", "sgerodes4", "sgerodes5"]
-# modules = ["sgerodes4", "popov"]
-modules = ["N_Neigbourhood", "FArekkusu", "Blind4Basics", "sgerodes"]
-
 ######## Matrices
 
 M, N, K = 5, 5, 3
@@ -23,14 +14,24 @@ matrix2D = [[0, 1, 2], [3, 4, 5], [6, 7, 8]]
 coord2D = (1, 1)
 distance = 3
 
+def mean_x10(arr):
+    return sum(arr) / len(arr) * 10
+
+
+######## implementations
+# modules = ["N_Neigbourhood", "FArekkusu", "Blind4Basics",  "sgerodes", "sgerodes2", "sgerodes3"]
+# modules = ["sgerodes", "sgerodes2", "sgerodes3", "sgerodes4", "sgerodes5"]
+# modules = ["sgerodes4", "popov"]
+modules = ["N_Neigbourhood", "FArekkusu", "Blind4Basics", "popov"]
+
 import N_Neigbourhood
 import FArekkusu
 import Blind4Basics
-import sgerodes
-import sgerodes2
-import sgerodes3
-import sgerodes4
-import sgerodes5
+#import sgerodes
+#import sgerodes2
+#import sgerodes3
+#import sgerodes4
+#import sgerodes5
 import popov
 
 ####### Functional Tests
