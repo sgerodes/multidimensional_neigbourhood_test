@@ -1,7 +1,7 @@
 import timeit
 
-do_performance = True
 do_functional = False
+do_performance = True
 
 ######## Matrices
 
@@ -21,7 +21,7 @@ def mean_x10(arr):
 ######## implementations
 # modules = ["sgerodes4", "popov"]
 # modules = ["FArekkusu", "Blind4Basics", "voile", "sgerodes4", "ragnar_codes", "lechevalier"]
-modules = ["sgerodes4", "ragnar_codes", "lechevalier"]
+modules = ["sgerodes4", "lechevalier", "ragnar_codes"]
 
 try:
     import N_Neigbourhood
@@ -34,6 +34,8 @@ try:
     import sgerodes5
     import popov
     import voile
+    import ragnar_codes
+    import lechevalier
 except ModuleNotFoundError as e:
     print(e)
 
