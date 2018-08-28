@@ -1,8 +1,7 @@
 import timeit
 
 do_performance = True
-do_functional = True
-
+do_functional = False
 
 ######## Matrices
 
@@ -14,25 +13,29 @@ matrix2D = [[0, 1, 2], [3, 4, 5], [6, 7, 8]]
 coord2D = (1, 1)
 distance = 3
 
+
 def mean_x10(arr):
     return sum(arr) / len(arr) * 10
 
 
 ######## implementations
-# modules = ["N_Neigbourhood", "FArekkusu", "Blind4Basics",  "sgerodes", "sgerodes2", "sgerodes3"]
-# modules = ["sgerodes", "sgerodes2", "sgerodes3", "sgerodes4", "sgerodes5"]
 # modules = ["sgerodes4", "popov"]
-modules = ["N_Neigbourhood", "FArekkusu", "Blind4Basics", "popov"]
+# modules = ["FArekkusu", "Blind4Basics", "voile", "sgerodes4", "ragnar_codes", "lechevalier"]
+modules = ["sgerodes4", "ragnar_codes", "lechevalier"]
 
-import N_Neigbourhood
-import FArekkusu
-import Blind4Basics
-#import sgerodes
-#import sgerodes2
-#import sgerodes3
-#import sgerodes4
-#import sgerodes5
-import popov
+try:
+    import N_Neigbourhood
+    import FArekkusu
+    import Blind4Basics
+    import sgerodes
+    import sgerodes2
+    import sgerodes3
+    import sgerodes4
+    import sgerodes5
+    import popov
+    import voile
+except ModuleNotFoundError as e:
+    print(e)
 
 ####### Functional Tests
 if do_functional:
@@ -87,9 +90,7 @@ repeat_number = 10
 if do_performance:
     print("####### Performance tests #######")
     for name in modules:
-        print(name)
         print(mean_x10(
             timeit.repeat('get_neighbourhood({}, {}, {}, {})'.format("'{}'".format(type), matrix3D, coord3D, distance),
                           'from {} import get_neighbourhood'.format(name), number=number_of_tests,
-                          repeat=repeat_number)))
-        print()
+                          repeat=repeat_number)), ":", name)
